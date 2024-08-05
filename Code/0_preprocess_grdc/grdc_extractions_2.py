@@ -1,0 +1,63 @@
+import pandas as pd
+import numpy as np
+import os
+
+output_directory = '/home/2787849/reanalysis_test/Practical'
+output_file = 'station_to_pixel_mapping_3.csv'
+output_path = os.path.join(output_directory, output_file)
+
+# Ensure the directory exists
+os.makedirs(output_directory, exist_ok=True)
+
+def near(array, value):
+    """
+    Find the index of the value closest to the given value in an array.
+    """
+    idx = (np.abs(array - value)).argmin()
+    return idx
+
+def assign_station_to_pixel(grdc_csv, pixel_latlon_csv, output_csv):
+    # Load GRDC data, which contains grdc_no and geographical coordinates
+    grdc_data = pd.read_csv(grdc_csv)
+    print("GRDC Columns:", grdc_data.columns)  # Debug: Print column names
+
+    # Load pixel data, which contains cell_no_land, lat, and lon
+    pixels = pd.read_csv(pixel_latlon_csv)
+    print("Pixel Columns:", pixels.columns)  # Debug: Print column names
+
+    # Prepare a list to store the nearest pixel information for each GRDC station
+    results = []
+
+    for index, grdc in grdc_data.iterrows():
+        grdc_lat = grdc['lat']
+        grdc_lon = grdc['lon']
+        grdc_no = grdc['grdc_no']
+
+        # Find the nearest pixel
+        distances = np.sqrt((pixels['lat'] - grdc_lat) ** 2 + (pixels['lon'] - grdc_lon) ** 2)
+        nearest_pixel_index = distances.idxmin()
+        nearest_pixel = pixels.iloc[nearest_pixel_index]
+
+        # Store the result
+        result = {
+            'grdc_no': grdc_no,
+            #'grdc_latitude': grdc_lat,
+            #'grdc_longitude': grdc_lon,
+            'cell_no_land': nearest_pixel['cell_no_land'],
+            'lat': nearest_pixel['lat'],
+            'lon': nearest_pixel['lon']
+        }
+        results.append(result)
+
+    # Convert results to DataFrame
+    results_df = pd.DataFrame(results)
+
+    # Save results to CSV
+    results_df.to_csv(output_csv, index=False)
+
+# Example usage
+assign_station_to_pixel(
+    grdc_csv='/home/2787849/reanalysis_test/Practical/stationLatLon_grdc.csv',
+    pixel_latlon_csv='/home/2787849/reanalysis_test/Practical/stationLatLon.csv',
+    output_csv=output_path
+)

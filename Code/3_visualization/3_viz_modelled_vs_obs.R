@@ -7,13 +7,13 @@ library(ggplot2)
 #cat("Done reading station_to_pixel_mapping.csv.\n")
 
 cat("Reading station_to_pixel_mapping_gsim_areagrdcfiltered_12monhts.csv...\n")
-cell_no_land <- read.csv('/home/bisik/Practical/gsim_preprocess/station_to_pixel_mapping_gsim_areagrdcfiltered_12monhts.csv') %>% select(cell_no_land, gsim.no)
-cat("Done reading station_to_pixel_mapping_gsim_areagrdcfiltered_12monhts.csv.\n")
+cell_no_land <- read.csv('/scratch-shared/bisik/Data/preprocess/preprocess_gsim/gsim_12months_missing_excluded.csv') %>% select(cell_no_land, gsim.no)
+cat("Done reading gsim_12months_missing_excluded.csv.\n")
 
 # Generate file paths
 cat("Generating file paths...\n")
-rf_data_files <- paste0('/scratch-shared/bisik/Practical_NEW/reanalysis_NEW_95_filtered/reanalysis_discharge/pcr_rf_reanalysis_monthly_30arcmin_', cell_no_land$cell_no_land, '.csv')
-prediction_files <- paste0('/home/bisik/Practical/gsim_preprocess/gsim_discharge_monthly_areafiltered_2_timefiltered/gsim_', cell_no_land$gsim.no, '.csv') #for GSIM validation
+rf_data_files <- paste0('/scratch-shared/bisik/Data/output/reanalysis_discharge/pcr_rf_reanalysis_monthly_30arcmin_', cell_no_land$cell_no_land, '.csv')
+prediction_files <- paste0('/scratch-shared/bisik/Data/validation_data/gsim_discharge/gsim_', cell_no_land$gsim.no, '.csv') #for GSIM validation
 #prediction_files <- paste0('/scratch-shared/bisik/predictors/grdc_discharge/grdc_', cell_no_land$grdc_no, '.csv') #for  GRDC validation
 cat("File paths generated.\n")
 

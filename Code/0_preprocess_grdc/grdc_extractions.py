@@ -58,6 +58,6 @@ def assign_station_to_pixel(grdc_csv, pixel_latlon_csv, output_csv):
 # Example usage
 assign_station_to_pixel(
     grdc_csv='/scratch-shared/bisik/Data/preprocess/stationLatLon_grdc.csv',
-    pixel_latlon_csv='/scratch-shared/bisik/Data/preprocess/stationLatLon.csv',
+    pixel_latlon_csv='/scratch-shared/bisik/Data/preprocess/stationLatLon_PCR.csv',
     output_csv=output_path
 )

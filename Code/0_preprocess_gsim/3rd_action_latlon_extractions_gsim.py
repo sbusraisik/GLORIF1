@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import os
 
-output_directory = '/home/bisik/Practical/gsim_preprocess/'
+output_directory = '/scratch-shared/bisik/Data/preprocess/preprocess_gsim/'
 output_file = 'station_to_pixel_mapping_gsim_areagrdcfiltered.csv'
 output_path = os.path.join(output_directory, output_file)
 
@@ -62,7 +62,7 @@ def assign_station_to_pixel(gsim_csv, pixel_latlon_csv, output_csv):
 
 # Example usage
 assign_station_to_pixel(
-    gsim_csv='/home/bisik/Practical/gsim_preprocess/gsim_area_excluded_5.csv',
-    pixel_latlon_csv='/home/bisik/Practical/stationLatLon.csv',
+    gsim_csv='/scratch-shared/bisik/Data/preprocess/preprocess_gsim/gsim_area_excluded.csv',
+    pixel_latlon_csv='/scratch-shared/bisik/Data/preprocess/preprocess_grdc/stationLatLon_PCR.csv',
     output_csv=output_path
 )

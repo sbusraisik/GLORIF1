@@ -3,12 +3,12 @@ source('/home/bisik/Practical/R/fun_0_loadLibrary.R')
 ####-------------------------------####
 
 # Load station information
-stationInfo <- read.csv('/home/bisik/Practical/station_to_pixel_mapping_3.csv')
+stationInfo <- read.csv('/home/bisik/Practical/station_pixel_mapping.csv')
 
 # Define file paths
-grdcPath <- '/scratch-shared/bisik/predictors/grdc_predictors/'
-pcrPath <- '/scratch-shared/bisik/predictors/pcr_allpredictors/'
-outputDir <- '/scratch-shared/bisik/predictors/pcr_allpredictors_training/'
+grdcPath <- '/scratch-shared/bisik/Data/predictors/grdc_predictors/'
+pcrPath <- '/scratch-shared/bisik/Data/predictors/pcr_allpredictors/'
+outputDir <- '/scratch-shared/bisik/Data/training/'
 
 # Ensure the output directory exists
 if (!dir.exists(outputDir)) {

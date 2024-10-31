@@ -2,7 +2,7 @@ library(ggplot2)
 library(dplyr)
 
 # Load the data using read.table for whitespace delimited data
-df1 <- read.csv("/home/bisik/Practical/rf_input/bigTable_allpredictors_final_2.csv")
+df1 <- read.csv("/scratch-shared/bisik/Data/bigTable_allpredictors.csv")
 df2 <-read.csv("/home/bisik/Practical/stationLatLon_grdc.csv")
 
 
@@ -28,7 +28,7 @@ grdc_to_exclude <- selected_columns %>%
 # Exclude those grdc_no from the dataframe
 final_predictors_table <- df1 %>%
   filter(!grdc_no %in% grdc_to_exclude$grdc_no)
-write.csv(final_predictors_table, "/home/bisik/Practical/rf_input/bigTable_allpredictors_final_NEW.csv", row.names = FALSE)
+write.csv(final_predictors_table, "/home/bisik/Practical/rf_input/bigTable_allpredictors_filtered_95.csv", row.names = FALSE)
 
 final_stationLatLon <- df2 %>%
   filter(!grdc_no %in% grdc_to_exclude$grdc_no)

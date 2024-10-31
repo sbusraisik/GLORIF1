@@ -6,7 +6,7 @@ process_mapping <- function(mapping_entry) {
   cell_no_land <- gsub("\\.0$", "", as.character(mapping_entry$cell_no_land))
   gsim.no <- mapping_entry$gsim.no
 
-  prediction_file <- paste0('/scratch-shared/bisik/predictors/pcr_discharge/pcr_discharge_', cell_no_land, '.csv')
+  prediction_file <- paste0('/scratch-shared/bisik/Data/predictors/pcr_discharge/pcr_discharge_', cell_no_land, '.csv')
   #prediction_file <- paste0('/scratch-shared/bisik/Practical_NEW/reanalysis_NEW_95_filtered/reanalysis_discharge/pcr_rf_reanalysis_monthly_30arcmin_', cell_no_land, '.csv')
   validation_file <- paste0('/home/bisik/Practical/gsim_preprocess/gsim_discharge_monthly_areafiltered_2_timefiltered/gsim_', gsim.no, '.csv')
 

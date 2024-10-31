@@ -11,7 +11,7 @@ startDate <- '1979-04-01'
 endDate <- '2019-12-01'
 
 # Load the calculate_missing function
-source('/home/bisik/Practical/R/fun_2_calculate_missing_12months_V2.R')
+source('/home/bisik/Practical/R/fun_2_calculate_missing_gsim.R')
 
 # Apply the calculate_missing function to each station
 missing_list <- lapply(1:nrow(stationInfo), calculate_missing)

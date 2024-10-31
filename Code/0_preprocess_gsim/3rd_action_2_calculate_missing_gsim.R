@@ -4,7 +4,7 @@ source('/home/bisik/Practical/R/fun_0_loadLibrary.R')
 
 # Set directories 
 gsimDir <- '/home/bisik/Practical/gsim_preprocess/gsim_discharge_monthly_areafiltered_2_timefiltered/'
-stationInfo <- read.csv('/home/bisik/Practical/gsim_preprocess/gsim_area_excluded_5.csv')
+stationInfo <- read.csv('/scratch-shared/bisik/Data/preprocess/preprocess_gsim/gsim_area_excluded.csv')
 
 # Define the date range
 startDate <- '1979-04-01'
@@ -23,4 +23,4 @@ summary(missing_col)
 stationInfo <- cbind(stationInfo, missing_col) 
 stationInfo <- stationInfo %>% filter(miss < 100)
 
-write.csv(stationInfo, '/home/bisik/Practical/gsim_preprocess/gsim_area_excluded_5_12months.csv', row.names = FALSE)
+write.csv(stationInfo, '/scratch-shared/bisik/Data/preprocess/preprocess_gsim/gsim_12months_missing_excluded.csv', row.names = FALSE)

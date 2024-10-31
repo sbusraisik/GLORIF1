@@ -22,5 +22,5 @@ final_df <- df2 %>%
 head(final_df)
 
 # Save the final dataframe to CSV
-write.csv(final_df, "/home/bisik/Practical/gsim_preprocess/gsim_area_excluded_5.csv", row.names = FALSE)
+write.csv(final_df, "/scratch-shared/bisik/Data/preprocess/preprocess_gsim/gsim_area_excluded.csv", row.names = FALSE)
 

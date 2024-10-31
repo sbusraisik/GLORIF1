@@ -2,8 +2,8 @@ import pandas as pd
 import numpy as np
 import os
 
-output_directory = '/home/2787849/reanalysis_test/Practical'
-output_file = 'station_to_pixel_mapping_3.csv'
+output_directory = '/scratch-shared/bisik/Data/preprocess/'
+output_file = 'station_pixel_mapping_grdc.csv'
 output_path = os.path.join(output_directory, output_file)
 
 # Ensure the directory exists
@@ -57,7 +57,7 @@ def assign_station_to_pixel(grdc_csv, pixel_latlon_csv, output_csv):
 
 # Example usage
 assign_station_to_pixel(
-    grdc_csv='/home/2787849/reanalysis_test/Practical/stationLatLon_grdc.csv',
-    pixel_latlon_csv='/home/2787849/reanalysis_test/Practical/stationLatLon.csv',
+    grdc_csv='/scratch-shared/bisik/Data/preprocess/stationLatLon_grdc.csv',
+    pixel_latlon_csv='/scratch-shared/bisik/Data/preprocess/stationLatLon.csv',
     output_csv=output_path
 )

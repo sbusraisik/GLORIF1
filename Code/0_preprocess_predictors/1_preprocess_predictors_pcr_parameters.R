@@ -3,9 +3,9 @@ source('/home/bisik/Practical/R/fun_0_loadLibrary.R')
 ####-------------------------------####
 
 #### set-up ####
-stationInfo <- read.csv('/home/bisik/Practical/allpoints_catchAttr.csv')
+stationInfo <- read.csv('/scratch-shared/bisik/Data/allpoints_catchAttr.csv')
 
-outputDir <- '/scratch-shared/bisik/predictors/pcr_parameters/'
+outputDir <- '/scratch-shared/bisik/Data/predictors/pcr_parameters/'
 dir.create(outputDir, showWarnings = FALSE, recursive = TRUE)
   
 # datetime as pcr-globwb run

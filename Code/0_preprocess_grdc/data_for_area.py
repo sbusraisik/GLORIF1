@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Read the first CSV file containing 'grdc_no' and 'obs' columns
-pcr_area_file_path = '/home/2787849/reanalysis_test/Practical/allpoints_catchAttr.csv'
+pcr_area_file_path = '/scratch-shared/bisik/Data/preprocess/allpoints_catchAttr.csv'
 pcr_area_columns = ['lon','lat', 'area_pcr']  # Specify columns to read
 pcr_area_df = pd.read_csv(pcr_area_file_path, usecols=pcr_area_columns)
 
@@ -9,7 +9,7 @@ pcr_area_df = pd.read_csv(pcr_area_file_path, usecols=pcr_area_columns)
 #pcr_area_avg_df = pcr_area_df.groupby('grdc_no').mean().reset_index()
 
 # Read the second CSV file containing 'grdc_no', 'longitude', and 'latitude' columns
-lonlat_file_path = '/home/2787849/reanalysis_test/Practical/station_to_pixel_mapping_3.csv'
+lonlat_file_path = '/scratch-shared/bisik/Data/preprocess/station_pixel_mapping_grdc.csv'
 lonlat_columns = ['grdc_no', 'lon', 'lat']  # Specify columns to read
 lonlat_df = pd.read_csv(lonlat_file_path, usecols=lonlat_columns)
 
@@ -32,4 +32,4 @@ print(merged_data_areas.columns)
 
 
 # Save the merged dataframe to a new CSV file
-merged_data_areas.to_csv('merged_data_areas_3.csv', index=False)
+merged_data_areas.to_csv('PCR_grdc_area.csv', index=False)

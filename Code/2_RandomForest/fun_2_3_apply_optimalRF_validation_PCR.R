@@ -8,7 +8,7 @@ process_mapping <- function(mapping_entry) {
 
   prediction_file <- paste0('/scratch-shared/bisik/Data/predictors/pcr_discharge/pcr_discharge_', cell_no_land, '.csv')
   #prediction_file <- paste0('/scratch-shared/bisik/Practical_NEW/reanalysis_NEW_95_filtered/reanalysis_discharge/pcr_rf_reanalysis_monthly_30arcmin_', cell_no_land, '.csv')
-  validation_file <- paste0('/home/bisik/Practical/gsim_preprocess/gsim_discharge_monthly_areafiltered_2_timefiltered/gsim_', gsim.no, '.csv')
+  validation_file <- paste0('/scratch-shared/bisik/Data/validation_data/gsim_discharge/gsim_', gsim.no, '.csv')
 
   if (file.exists(prediction_file) && file.exists(validation_file)) {
     print(paste("Processing cell_no_land:", cell_no_land, "gsim.no:", gsim.no))

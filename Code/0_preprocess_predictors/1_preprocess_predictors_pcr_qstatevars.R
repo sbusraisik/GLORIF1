@@ -2,13 +2,13 @@
 source('/home/bisik/Practical/R/fun_0_loadLibrary.R')
 ####-------------------------------####
 
-stationInfo <- read.csv('/home/bisik/Practical/stationLatLon.csv')
+stationInfo <- read.csv('/home/bisik/Practical/stationLatLon_PCR.csv')
 
 #pcr-globwb time series 1979-2019
-filePathDischarge <- '/scratch-shared/bisik/predictors/pcr_discharge/'
-filePathStatevars <- '/scratch-shared/bisik/predictors/pcr_statevars/'
+filePathDischarge <- '/scratch-shared/bisik/Data/predictors/pcr_discharge/'
+filePathStatevars <- '/scratch-shared/bisik/Data/predictors/pcr_statevars/'
 
-upstreamArea <- read.csv('/scratch-shared/bisik/predictors/preprocess/upstream_area.txt', sep = "" , header = F)
+upstreamArea <- read.csv('/scratch-shared/bisik/Data/upstream_area.txt', sep = "" , header = F)
 colnames(upstreamArea) <- c('lon', 'lat', 'area_pcr')
 upstreamArea$area_pcr <- upstreamArea$area_pcr / 1000000 # m2 to km2
 

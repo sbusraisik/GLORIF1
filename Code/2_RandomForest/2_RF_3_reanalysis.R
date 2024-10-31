@@ -15,7 +15,7 @@ dir.create(outputDirReanalysis, showWarnings = F, recursive = T)
 #### reanalysis - predict residuals for test stations ####
 #### all predictors
 print('allpredictors: reading trained RF...')
-optimal_ranger <- readRDS('/scratch-shared/bisik/Practical_NEW/RF/train/trainedRF.rds')
+optimal_ranger <- readRDS('/scratch-shared/bisik/Data/RF/train/trainedRF.rds')
 print('calculation: initiated')
 
 mclapply(1:nrow(stationInfo), key='allpredictors',apply_optimalRF, mc.cores=32)

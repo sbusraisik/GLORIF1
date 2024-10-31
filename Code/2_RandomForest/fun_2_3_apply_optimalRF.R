@@ -7,7 +7,7 @@ apply_optimalRF <- function(i, key){
     station_no <- stationInfo$cell_no_land[i]
     print(station_no)
     
-    pcr_discharge <- read.csv(paste0('/scratch-shared/bisik/pcr_discharge_busra/pcr_discharge_',
+    pcr_discharge <- read.csv(paste0('/scratch-shared/bisik/Data/predictors/pcr_flowdepth/pcr_discharge_',
                                      station_no, '.csv')) %>% mutate(datetime=as.Date(datetime))
     
     if(sum(pcr_discharge$pcr==0)){

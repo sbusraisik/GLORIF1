@@ -5,7 +5,7 @@ source('/home/bisik/Practical/R/fun_2_3_apply_optimalRF.R')
 
 stationInfo <- read.csv('/home/bisik/Practical/stationLatLon.csv')
 
-outputDirReanalysis <- '/scratch-shared/bisik/Practical_NEW/reanalysis_TEST_3/reanalysis_flowdepth/'
+outputDirReanalysis <- '/scratch-shared/bisik/Data/output/reanalysis_flowdepth/'
 dir.create(outputDirReanalysis, showWarnings = F, recursive = T)
 
 # Define the date range

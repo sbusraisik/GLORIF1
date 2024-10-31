@@ -33,4 +33,4 @@ bigTable <- bigTable[, c('grdc_no', 'cell_no_land', setdiff(names(bigTable), c('
 bigTable <- na.omit(bigTable)
 
 print('writing to disk...')
-write.csv(bigTable, '/home/2787849/reanalysis_test/Practical/bigTable_allpredictors_final_2.csv', row.names = FALSE)
+write.csv(bigTable, '/scratch-shared/bisik/Data/bigTable_allpredictors.csv', row.names = FALSE)

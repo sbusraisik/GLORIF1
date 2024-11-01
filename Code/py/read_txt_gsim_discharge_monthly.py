@@ -6,7 +6,7 @@ import time
 
 filePath = '/home/bisik/Practical/GSIM_indices/TIMESERIES/monthly/'
 outputPath = '/home/bisik/Practical/gsim_preprocess/gsim_discharge_monthly_areafiltered_3/'
-loc = pd.read_csv('/home/bisik/Practical/gsim_preprocess/station_to_pixel_mapping_gsim_areagrdcfiltered.csv')
+loc = pd.read_csv('/home/bisik/Practical/gsim_preprocess/station_pixel_mapping_gsim.csv')
 
 if not os.path.exists(outputPath):
     os.makedirs(outputPath)

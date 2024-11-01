@@ -1,7 +1,7 @@
 source('/home/bisik/Practical/R/fun_0_loadLibrary.R')
 
 #### create big table with all predictors to execute corranalysis ####
-filePathPreds <- '/scratch-shared/bisik/Data/training/'
+filePathPreds <- '/scratch-shared/bisik/Data/training_data/'
 fileListPreds <- list.files(filePathPreds)
 filenames <- paste0(filePathPreds, fileListPreds)
 

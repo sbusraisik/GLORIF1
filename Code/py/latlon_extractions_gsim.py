@@ -3,7 +3,7 @@ import numpy as np
 import os
 
 output_directory = '/scratch-shared/bisik/Data/preprocess/preprocess_gsim/'
-output_file = 'station_to_pixel_mapping_gsim_areagrdcfiltered.csv'
+output_file = 'station_pixel_mapping_gsim.csv'
 output_path = os.path.join(output_directory, output_file)
 
 # Ensure the directory exists
